@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Outer Circle -->
+    <path
+        android:fillColor="#800020"
+        android:pathData="M100,10A90,90 0,1,1 10,100 90,90 0,0,1 100,10Z" />
+
+    <!-- Inner Circle -->
+    <path
+        android:fillColor="#FFFDD0"
+        android:pathData="M100,25A75,75 0,1,1 25,100 75,75 0,0,1 100,25Z" />
+
+    <!-- House -->
+    <path
+        android:fillColor="#800020"
+        android:pathData="M65,100v45h70v-45z" />
+
+    <!-- Roof -->
+    <path
+        android:fillColor="#800020"
+        android:pathData="M100,55L50,105h100z" />
+
+    <!-- Door -->
+    <path
+        android:fillColor="#FFFDD0"
+        android:pathData="M90,120h20v25h-20z" />
+
+    <!-- Windows -->
+    <path
+        android:fillColor="#FFFDD0"
+        android:pathData="M75,110h10v15h-10z" />
+    <path
+        android:fillColor="#FFFDD0"
+        android:pathData="M115,110h10v15h-10z" />
+</vector>

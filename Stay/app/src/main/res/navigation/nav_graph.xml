@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.stay.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.stay.ui.auth.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.stay.ui.home.HomeFragment"
+        android:label="Student Stay Gabs"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="mode"
+            android:defaultValue="ALL"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.stay.ui.filter.FilterFragment"
+        android:label="Stay Gabs Search"
+        tools:layout="@layout/fragment_filter" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.stay.ui.notifications.NotificationsFragment"
+        android:label="Stay Gabs Alerts"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.stay.ui.profile.ProfileFragment"
+        android:label="My Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_addListingFragment"
+            app:destination="@id/addListingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.stay.ui.details.DetailsFragment"
+        android:label="House Details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="listingId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_detailsFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.stay.ui.payment.PaymentFragment"
+        android:label="Stay Gabs Payment"
+        tools:layout="@layout/fragment_payment">
+        <argument
+            android:name="listingId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_paymentFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.stay.ui.chat.ChatFragment"
+        android:label="Chat with Landlord"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="listingId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addListingFragment"
+        android:name="com.example.stay.ui.profile.AddListingFragment"
+        android:label="Add Property"
+        tools:layout="@layout/fragment_add_listing" />
+
+</navigation>
